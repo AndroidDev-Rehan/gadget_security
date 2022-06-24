@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gadget_security/utils/color.dart';
 import 'package:gadget_security/view/auth/login.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      color: ColorResources.COLOR_PRIMARY,
       home:  LoginPage(),
     );
   }

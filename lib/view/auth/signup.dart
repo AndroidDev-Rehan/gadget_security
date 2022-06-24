@@ -1,5 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:gadget_security/utils/color.dart';
+import 'package:gadget_security/view/auth/login.dart';
 import 'package:get/get.dart';
 
 
@@ -26,7 +28,7 @@ class SignUpScreen extends StatelessWidget {
                     child: Column(
                       children:  [
                         const SizedBox(height: 20,),
-                        Image.asset("assets/images/logo.png", scale: 3,),
+                        Image.asset("assets/logo.jpg", scale: 3,),
                         const SizedBox(height: 20,),
                         signInContainer(),
                         const SizedBox(height: 20,),
@@ -39,9 +41,9 @@ class SignUpScreen extends StatelessWidget {
                               Text("I already have an account.  ", style: TextStyle(color: Colors.black.withOpacity(0.7)),),
                               InkWell(
                                   onTap: (){
-
+                                    Get.to(LoginPage());
                                   },
-                                  child: const Text("Sign In", style: TextStyle(color: Colors.purple, fontWeight: FontWeight.w600),)),
+                                  child: const Text("Sign In", style: TextStyle(color: ColorResources.COLOR_PRIMARY, fontWeight: FontWeight.w600),)),
                             ],
                           ),
                         )
@@ -90,7 +92,7 @@ class SignUpScreen extends StatelessWidget {
               textFieldsColumn(),
 //              const SizedBox(height: 10,),
               const SizedBox(height: 30,),
-              signUpButton("Create new Account")
+              signUpButton("Sign Up")
 //              forgotPassword(),
 //              loginButton("Login"),
             ],
@@ -183,6 +185,7 @@ class SignUpScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
+
           onPressed: (){
 
             if(_signUpFormKey.currentState!.validate() ) {
@@ -192,6 +195,7 @@ class SignUpScreen extends StatelessWidget {
           child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
           style: ElevatedButton.styleFrom(
             fixedSize: const Size(double.infinity, 50),
+            primary: ColorResources.COLOR_PRIMARY
           )
       ),
     );

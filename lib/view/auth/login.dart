@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gadget_security/view/auth/signup.dart';
 import 'package:get/get.dart';
 
 import '../../utils/color.dart';
+import '../home/home.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -143,6 +145,7 @@ class LoginPage extends StatelessWidget {
 
           onPressed: (){
             if(_loginFormKey.currentState!.validate()) {
+              Get.to(HomeScreen());
             }
           },
           child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
@@ -180,9 +183,9 @@ class LoginPage extends StatelessWidget {
               Text("Don't have an account? ", style: TextStyle(color: Colors.black.withOpacity(0.7)),),
               InkWell(
                   onTap: (){
-
+                    Get.to(SignUpScreen());
                   },
-                  child: Text("Create new account", style: TextStyle(color: Colors.purple, fontWeight: FontWeight.w600),)),
+                  child: const Text("Create new account", style: TextStyle(color: ColorResources.COLOR_PRIMARY, fontWeight: FontWeight.w600),)),
             ],
           ),
         ),
@@ -198,7 +201,7 @@ class LoginPage extends StatelessWidget {
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Text("Or"),
+              child: Text("∞"),
             ),
             Expanded(
               child: Container(
@@ -213,7 +216,4 @@ class LoginPage extends StatelessWidget {
       ],
     );
   }
-
-
-
 }
