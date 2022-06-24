@@ -25,11 +25,11 @@ class LoginPage extends StatelessWidget {
                     child: Column(
                       children:  [
                         const SizedBox(height: 20,),
-                        Image.asset("assets/logo.jpg", scale: 3,),
+                        Image.asset("assets/logo.png", scale: 3,),
                         const SizedBox(height: 20,),
                         signInContainer(),
                         const SizedBox(height: 20,),
-                        belowContainer(),
+
 
                       ],
                     ),
@@ -187,28 +187,7 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20,),
-        Row(
-          children: [
-            Expanded(
-              child: Container(
-                  width: double.infinity,
-                  height: 1,
-                  color: Colors.grey.withOpacity(0.2)
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Text("Or"),
-            ),
-            Expanded(
-              child: Container(
-                  width: double.infinity,
-                  height: 1,
-                  color: Colors.grey.withOpacity(0.2)
-              ),
-            )                ],
-        ),
-        const SizedBox(height: 20,),
+
 
       ],
     );

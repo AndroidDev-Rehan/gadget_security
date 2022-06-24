@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:gadget_security/utils/color.dart';
 import 'package:get/get.dart';
 
 
@@ -26,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
                     child: Column(
                       children:  [
                         const SizedBox(height: 20,),
-                        Image.asset("assets/images/logo.png", scale: 3,),
+                        Image.asset("assets/logo.png", scale: 3,),
                         const SizedBox(height: 20,),
                         signInContainer(),
                         const SizedBox(height: 20,),
@@ -41,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
                                   onTap: (){
 
                                   },
-                                  child: const Text("Sign In", style: TextStyle(color: Colors.purple, fontWeight: FontWeight.w600),)),
+                                  child: const Text("Sign In", style: TextStyle(color: ColorResources.COLOR_PRIMARY, fontWeight: FontWeight.w600),)),
                             ],
                           ),
                         )
@@ -191,6 +192,7 @@ class SignUpScreen extends StatelessWidget {
           },
           child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
           style: ElevatedButton.styleFrom(
+            primary: ColorResources.COLOR_PRIMARY,
             fixedSize: const Size(double.infinity, 50),
           )
       ),
