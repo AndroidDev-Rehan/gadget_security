@@ -10,8 +10,8 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 import '../global_widgets/drawer.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+class OldHomeScreen extends StatelessWidget {
+  OldHomeScreen({Key? key}) : super(key: key);
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -187,4 +187,6 @@ class HomeScreen extends StatelessWidget {
       ],),
     );
   }
+
+
 }

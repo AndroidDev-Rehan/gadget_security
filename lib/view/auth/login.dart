@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gadget_security/view/auth/signup.dart';
+import 'package:gadget_security/view/home/home_screen.dart';
 import 'package:get/get.dart';
 
 import '../../utils/color.dart';
-import '../home/home.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
                     child: Column(
                       children:  [
                         const SizedBox(height: 20,),
-                        Image.asset("assets/logo.jpg", scale: 3,),
+                        Image.asset("assets/logo.png", scale: 3,),
                         const SizedBox(height: 20,),
                         signInContainer(),
                         const SizedBox(height: 20,),
@@ -146,10 +146,11 @@ class LoginPage extends StatelessWidget {
       child: ElevatedButton(
 
           onPressed: (){
-            if(Get.isDarkMode)
-            Get.changeThemeMode(ThemeMode.light);
-            else
-              Get.changeThemeMode(ThemeMode.dark);
+            // if(Get.isDarkMode) {
+            //   Get.changeThemeMode(ThemeMode.light);
+            // } else {
+            //   Get.changeThemeMode(ThemeMode.dark);
+            // }
             if(_loginFormKey.currentState!.validate()) {
               Get.to(HomeScreen());
             }
