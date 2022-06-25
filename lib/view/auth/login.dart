@@ -84,36 +84,38 @@ class LoginPage extends StatelessWidget {
 
   textFieldsColumn(){
 
-    return Form(
-      key: _loginFormKey,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          customTextField("Enter Email", TextEditingController(), Icons.person,
-                  (String? value){
-                if (value == null) {
-                  return 'Email is required';
+    return Container(
+      child: Form(
+        key: _loginFormKey,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            customTextField("Enter Email", TextEditingController(), Icons.person,
+                    (String? value){
+                  if (value == null) {
+                    return 'Email is required';
+                  }
+                  if (value.isEmpty) {
+                    return 'Email is required';
+                  }
+
+                  return null;
                 }
-                if (value.isEmpty) {
-                  return 'Email is required';
+            ),
+            customTextField("Enter Password", TextEditingController(), Icons.lock,
+                    (String? value) {
+                  if (value==null) {
+                    return 'password is required';
+                  }
+                  if(value.isEmpty){
+                    return 'password is required';
+                  }
+                  return null;
                 }
 
-                return null;
-              }
-          ),
-          customTextField("Enter Password", TextEditingController(), Icons.lock,
-                  (String? value) {
-                if (value==null) {
-                  return 'password is required';
-                }
-                if(value.isEmpty){
-                  return 'password is required';
-                }
-                return null;
-              }
-
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -142,12 +144,15 @@ class LoginPage extends StatelessWidget {
       child: ElevatedButton(
 
           onPressed: (){
+            if(Get.isDarkMode)
+            Get.changeThemeMode(ThemeMode.light);
+            else
+              Get.changeThemeMode(ThemeMode.dark);
             if(_loginFormKey.currentState!.validate()) {
             }
           },
           child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
           style: ElevatedButton.styleFrom(
-            primary: ColorResources.COLOR_PRIMARY,
 
             fixedSize: const Size(double.infinity, 50),
           )
