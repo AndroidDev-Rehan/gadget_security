@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gadget_security/view/auth/signup.dart';
 import 'package:get/get.dart';
 
 import '../../utils/color.dart';
+import '../home/home.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -25,11 +27,11 @@ class LoginPage extends StatelessWidget {
                     child: Column(
                       children:  [
                         const SizedBox(height: 20,),
-                        Image.asset("assets/logo.png", scale: 3,),
+                        Image.asset("assets/logo.jpg", scale: 3,),
                         const SizedBox(height: 20,),
                         signInContainer(),
                         const SizedBox(height: 20,),
-
+                        belowContainer(),
 
                       ],
                     ),
@@ -149,6 +151,7 @@ class LoginPage extends StatelessWidget {
             else
               Get.changeThemeMode(ThemeMode.dark);
             if(_loginFormKey.currentState!.validate()) {
+              Get.to(HomeScreen());
             }
           },
           child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
@@ -185,19 +188,37 @@ class LoginPage extends StatelessWidget {
               Text("Don't have an account? ", style: TextStyle(color: Colors.black.withOpacity(0.7)),),
               InkWell(
                   onTap: (){
-
+                    Get.to(SignUpScreen());
                   },
-                  child: Text("Create new account", style: TextStyle(color: Colors.purple, fontWeight: FontWeight.w600),)),
+                  child: const Text("Create new account", style: TextStyle(color: ColorResources.COLOR_PRIMARY, fontWeight: FontWeight.w600),)),
             ],
           ),
         ),
         const SizedBox(height: 20,),
-
+        Row(
+          children: [
+            Expanded(
+              child: Container(
+                  width: double.infinity,
+                  height: 1,
+                  color: Colors.grey.withOpacity(0.2)
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Text("∞"),
+            ),
+            Expanded(
+              child: Container(
+                  width: double.infinity,
+                  height: 1,
+                  color: Colors.grey.withOpacity(0.2)
+              ),
+            )                ],
+        ),
+        const SizedBox(height: 20,),
 
       ],
     );
   }
-
-
-
 }

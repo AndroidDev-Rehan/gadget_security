@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gadget_security/theme/darktheme.dart';
-import 'package:gadget_security/theme/lighttheme.dart';
 import 'package:gadget_security/view/auth/login.dart';
 import 'package:gadget_security/view/auth/signup.dart';
 import 'package:get/get.dart';
