@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gadget_security/view/home/widgets/custom_button.dart';
 import 'package:gadget_security/view/home/widgets/custom_grey_container.dart';
-import 'package:gadget_security/view/home/widgets/textfieldwithIcon.dart';
+import 'package:gadget_security/view/global_widgets/textfieldwithIcon.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 

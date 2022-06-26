@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gadget_security/theme/darktheme.dart';
 import 'package:gadget_security/theme/lighttheme.dart';
+import 'package:gadget_security/view/add_gadgets/add_gadgets.dart';
 import 'package:gadget_security/view/auth/login.dart';
 import 'package:gadget_security/view/auth/signup.dart';
 import 'package:gadget_security/view/home/home_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: light,
       darkTheme: dark,
       themeMode: ThemeMode.light,
-      home:  HomeScreen(),
+      home:  AddGadgetScreen(),
     );
   }
 }
