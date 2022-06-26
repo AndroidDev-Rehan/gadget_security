@@ -3,6 +3,7 @@ import 'package:gadget_security/view/global_widgets/dropdown_button.dart';
 import 'package:gadget_security/view/global_widgets/textfieldwithIcon.dart';
 import 'package:gadget_security/view/home/widgets/custom_grey_container.dart';
 
+import '../global_widgets/appbar.dart';
 import '../home/widgets/custom_button.dart';
 
 class AddGadgetScreen extends StatelessWidget {
@@ -11,12 +12,7 @@ class AddGadgetScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        title: const Text("Gadget Security"),
-        centerTitle: false,
-        actions: const [Icon(Icons.more_vert)],
-      ),
+      appBar: CustomAppBar(),
       body: ListView(
         children: [
          SizedBox(height: 20,),

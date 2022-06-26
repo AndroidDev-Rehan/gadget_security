@@ -4,6 +4,7 @@ import 'package:gadget_security/view/home/home_screen.dart';
 import 'package:get/get.dart';
 
 import '../../utils/color.dart';
+import '../global_widgets/appbar.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -19,19 +20,21 @@ class LoginPage extends StatelessWidget {
 
           builder: (context, snapshot) {
             return Scaffold(
+              appBar:CustomAppBar(),
               body: SingleChildScrollView(
                 child: SizedBox(
                   width: Get.width,
+                  height:Get.height-80,
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+
                       children:  [
+
+                        signInContainer(context),
                         const SizedBox(height: 20,),
-                        Image.asset("assets/logo.png", scale: 3,),
-                        const SizedBox(height: 20,),
-                        signInContainer(),
-                        const SizedBox(height: 20,),
-                        belowContainer(),
+                        belowContainer(context),
 
                       ],
                     ),
@@ -44,7 +47,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  signInContainer(){
+  signInContainer(BuildContext context){
     return Material(
       elevation: 10,
       borderRadius: BorderRadius.circular(20),
@@ -74,9 +77,9 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 20,),
               textFieldsColumn(),
               const SizedBox(height: 30,),
-              forgotPassword(),
+              forgotPassword(context),
               const SizedBox(height: 20,),
-              loginButton("Login"),
+              loginButton("Login",context),
             ],
           ),
         ),
@@ -139,7 +142,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  loginButton(String text){
+  loginButton(String text,BuildContext context){
 
     return Container(
       width: double.infinity,
@@ -157,26 +160,26 @@ class LoginPage extends StatelessWidget {
           },
           child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
           style: ElevatedButton.styleFrom(
-
-            fixedSize: const Size(double.infinity, 50),
+primary: Theme.of(context).primaryColor,
+            fixedSize:  Size(double.infinity, 50),
           )
       ),
     );
   }
 
-  forgotPassword(){
+  forgotPassword(BuildContext context){
     return GestureDetector(
       onTap: (){},
       child: Row(
         mainAxisSize: MainAxisSize.max,
-        children: const [
-          Text("Forgot Password?", style: TextStyle(color: ColorResources.COLOR_PRIMARY, fontWeight: FontWeight.bold, fontSize: 16),),
+        children:  [
+          Text("Forgot Password?", style: TextStyle(color:Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 16),),
         ],
       ),
     );
   }
 
-  belowContainer(){
+  belowContainer(BuildContext context){
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -191,7 +194,7 @@ class LoginPage extends StatelessWidget {
                   onTap: (){
                     Get.to(SignUpScreen());
                   },
-                  child: const Text("Create new account", style: TextStyle(color: ColorResources.COLOR_PRIMARY, fontWeight: FontWeight.w600),)),
+                  child: Text("Create new account", style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w600),)),
             ],
           ),
         ),

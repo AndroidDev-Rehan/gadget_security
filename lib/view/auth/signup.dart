@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:gadget_security/utils/color.dart';
 import 'package:gadget_security/view/auth/login.dart';
+import 'package:gadget_security/view/global_widgets/appbar.dart';
 import 'package:get/get.dart';
 
 
@@ -20,17 +21,18 @@ class SignUpScreen extends StatelessWidget {
       child: OrientationBuilder(
           builder: (context, snapshot) {
             return Scaffold(
+              appBar: CustomAppBar(),
               body: SingleChildScrollView(
                 child: SizedBox(
                   width: Get.width,
+                  height: Get.height-80,
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children:  [
-                        const SizedBox(height: 20,),
-                        Image.asset("assets/logo.png", scale: 3,),
-                        const SizedBox(height: 20,),
-                        signInContainer(),
+
+                        signInContainer(context),
                         const SizedBox(height: 20,),
                         SizedBox(
                           width: double.infinity,
@@ -43,7 +45,7 @@ class SignUpScreen extends StatelessWidget {
                                   onTap: (){
                                     Get.to(LoginPage());
                                   },
-                                  child: const Text("Sign In", style: TextStyle(color: ColorResources.COLOR_PRIMARY, fontWeight: FontWeight.w600),)),
+                                  child:Text("Sign In", style: TextStyle(color:Get.theme.primaryColor, fontWeight: FontWeight.w600),)),
                             ],
                           ),
                         )
@@ -59,7 +61,7 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
-  signInContainer(){
+  signInContainer(BuildContext context){
 
 
     return Material(
@@ -195,7 +197,7 @@ class SignUpScreen extends StatelessWidget {
           child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
           style: ElevatedButton.styleFrom(
             fixedSize: const Size(double.infinity, 50),
-            primary: ColorResources.COLOR_PRIMARY
+            primary: Get.theme.primaryColor
           )
       ),
     );
