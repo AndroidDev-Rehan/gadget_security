@@ -109,9 +109,9 @@ class OldHomeScreen extends StatelessWidget {
               ),
               Container(
                 padding:
-                    EdgeInsets.only(top: 20, right: 20, left: 10, bottom: 20),
-                margin: EdgeInsets.only(left: 20, right: 20),
-                decoration: new BoxDecoration(
+                    const EdgeInsets.only(top: 20, right: 20, left: 10, bottom: 20),
+                margin: const EdgeInsets.only(left: 20, right: 20),
+                decoration: BoxDecoration(
                     color: Colors.grey[200],
                     borderRadius: new BorderRadius.all(new Radius.circular(5))),
                 child: Row(
